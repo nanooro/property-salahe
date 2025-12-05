@@ -81,7 +81,7 @@ export default function HeroSectionOne() {
         <div className="w-full overflow-hidden rounded-xl border border-gray-300 dark:border-gray-700">
 <div className="mx-auto max-w-4xl">
   <video
-    src="/founder_intro.mp4"
+    src="/founder_intro_small.mp4"
     controls
     autoPlay={true}
     loop
