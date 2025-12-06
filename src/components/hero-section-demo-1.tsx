@@ -103,7 +103,7 @@ export default function HeroSectionOne() {
 
   <Button
     id="startBtn"
-    className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-white/70 px-6 py-3 rounded-xl text-black scale-[2] transition-opacity"
+    className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2  px-6 py-3 rounded-md text-black scale-[2] bg-white"
     onClick={() => {
       const v = document.getElementById("founderVid")
 
