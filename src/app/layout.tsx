@@ -16,23 +16,23 @@ export const metadata: Metadata = {
   title: "Property salahe",
   description: "Find your next property",
   icons: {
-    icon: '/favicon.ico',
+    icon: "/favicon.ico",
   },
   openGraph: {
     title: "Property salahe",
     description: "Find your next property",
-    url: 'https://example.com', // replace with your site URL
-    siteName: 'Property Salahe',
-images: [
-  {
-    url: 'https://thumbs.dreamstime.com/b/idyllic-summer-landscape-clear-mountain-lake-alps-45054687.jpg',
-    width: 1200,
-    height: 630,
+    url: "https://example.com", // replace with your site URL
+    siteName: "Property Salahe",
+    images: [
+      {
+        url: "https://thumbs.dreamstime.com/b/idyllic-summer-landscape-clear-mountain-lake-alps-45054687.jpg",
+        width: 1200,
+        height: 630,
+      },
+    ],
+    type: "website",
   },
-],
-    type: 'website',
-  },
-}
+};
 
 export default function RootLayout({
   children,

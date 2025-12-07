@@ -87,5 +87,3 @@ export function NavbarMain({ className }: { className?: string }) {
     </Navbar>
   );
 }
-
-
