@@ -1,0 +1,140 @@
+$ next dev
+ ⚠ Warning: Next.js inferred your workspace root, but it may not be correct.
+ We detected multiple lockfiles and selected the directory of /home/skyboy/dev/bun.lock as the root directory.
+ To silence this warning, set `turbopack.root` in your Next.js config, or consider removing one of the lockfiles if it's not needed.
+   See https://nextjs.org/docs/app/api-reference/config/next-config-js/turbopack#root-directory for more information.
+ Detected additional lockfiles: 
+   * /home/skyboy/dev/salahe/bun.lock
+
+   ▲ Next.js 16.0.7 (Turbopack)
+   - Local:         http://localhost:3000
+   - Network:       http://10.165.251.110:3000
+   - Environments: .env.local
+
+ ✓ Starting...
+ ✓ Ready in 1225ms
+ ○ Compiling / ...
+ {
+  message: 'TypeError: fetch failed',
+  details: 'TypeError: fetch failed\n' +
+    '\n' +
+    'Caused by: Error: getaddrinfo ENOTFOUND your-supabase-url.supabase.co (ENOTFOUND)\n' +
+    'Error: getaddrinfo ENOTFOUND your-supabase-url.supabase.co\n' +
+    '    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:121:26)\n' +
+    '    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17)',
+  hint: '',
+  code: ''
+}
+ GET / 200 in 10.8s (compile: 10.5s, render: 363ms)
+xkbcommon: ERROR: [XKB-679] No Compose file for locale "en_IN.ISO8859-1": locale is either invalid or not installed
+xkbcommon: ERROR: [XKB-679] couldn't find a Compose file for locale "en_IN" (mapped to "en_IN.ISO8859-1")
+/usr/share/scrcpy/scrcpy-server: 1 file pushed, 0 skipped. 33.7 MB/s (90164 bytes in 0.003s)
+[server] INFO: Device: [vivo] vivo V2408 (Android 14)
+scrcpy 3.3.3 <https://github.com/Genymobile/scrcpy>
+INFO: ADB device found:
+INFO:     -->   (usb)  10BEAJ0U4Q0010U                 device  V2408
+INFO: Renderer: opengl
+INFO: OpenGL version: 4.6 (Compatibility Profile) Mesa 25.2.7-arch1.1
+INFO: Trilinear filtering enabled
+INFO: Texture: 720x1608
+ {
+  message: 'TypeError: fetch failed',
+  details: 'TypeError: fetch failed\n' +
+    '\n' +
+    'Caused by: Error: getaddrinfo ENOTFOUND your-supabase-url.supabase.co (ENOTFOUND)\n' +
+    'Error: getaddrinfo ENOTFOUND your-supabase-url.supabase.co\n' +
+    '    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:121:26)\n' +
+    '    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17)',
+  hint: '',
+  code: ''
+}
+ GET / 200 in 119ms (compile: 11ms, render: 108ms)
+ GET / 200 in 750ms (compile: 512ms, render: 239ms)
+ ✓ Compiled in 131ms
+ {
+  message: 'TypeError: fetch failed',
+  details: 'TypeError: fetch failed\n' +
+    '\n' +
+    'Caused by: Error: getaddrinfo ENOTFOUND your-supabase-url.supabase.co (ENOTFOUND)\n' +
+    'Error: getaddrinfo ENOTFOUND your-supabase-url.supabase.co\n' +
+    '    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:121:26)\n' +
+    '    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17)',
+  hint: '',
+  code: ''
+}
+Invalid hook call. Hooks can only be called inside of the body of a function component. This could happen for one of the following reasons:
+1. You might have mismatching versions of React and the renderer (such as React DOM)
+2. You might be breaking the Rules of Hooks
+3. You might have more than one copy of React in the same app
+See https://react.dev/link/invalid-hook-call for tips about how to debug and fix this problem.
+ ⨯ TypeError: Cannot read properties of null (reading 'useRef')
+    at Home (src/app/page.tsx:18:27)
+  16 |     console.log(file);
+  17 |   }
+> 18 |   const fileInput = useRef()
+     |                           ^
+  19 |   return (
+  20 |     <div className="flex flex-col min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
+  21 |       <NavbarMain className="fixed top-0" /> {
+  digest: '3333771270'
+}
+ {
+  message: 'TypeError: fetch failed',
+  details: 'TypeError: fetch failed\n' +
+    '\n' +
+    'Caused by: Error: getaddrinfo ENOTFOUND your-supabase-url.supabase.co (ENOTFOUND)\n' +
+    'Error: getaddrinfo ENOTFOUND your-supabase-url.supabase.co\n' +
+    '    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:121:26)\n' +
+    '    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17)',
+  hint: '',
+  code: ''
+}
+Invalid hook call. Hooks can only be called inside of the body of a function component. This could happen for one of the following reasons:
+1. You might have mismatching versions of React and the renderer (such as React DOM)
+2. You might be breaking the Rules of Hooks
+3. You might have more than one copy of React in the same app
+See https://react.dev/link/invalid-hook-call for tips about how to debug and fix this problem.
+ GET / 500 in 766ms (compile: 11ms, render: 756ms)
+ ✓ Compiled in 400ms
+ {
+  message: 'TypeError: fetch failed',
+  details: 'TypeError: fetch failed\n' +
+    '\n' +
+    'Caused by: Error: getaddrinfo ENOTFOUND your-supabase-url.supabase.co (ENOTFOUND)\n' +
+    'Error: getaddrinfo ENOTFOUND your-supabase-url.supabase.co\n' +
+    '    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:121:26)\n' +
+    '    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17)',
+  hint: '',
+  code: ''
+}
+ GET / 200 in 561ms (compile: 249ms, render: 312ms)
+error: script "dev" was terminated by signal SIGHUP (Terminal hung up)
+$ next dev
+ ⚠ Warning: Next.js inferred your workspace root, but it may not be correct.
+ We detected multiple lockfiles and selected the directory of /home/skyboy/dev/bun.lock as the root directory.
+ To silence this warning, set `turbopack.root` in your Next.js config, or consider removing one of the lockfiles if it's not needed.
+   See https://nextjs.org/docs/app/api-reference/config/next-config-js/turbopack#root-directory for more information.
+ Detected additional lockfiles: 
+   * /home/skyboy/dev/salahe/bun.lock
+
+   ▲ Next.js 16.0.7 (Turbopack)
+   - Local:         http://localhost:3000
+   - Network:       http://10.165.251.117:3000
+   - Environments: .env.local
+
+ ✓ Starting...
+ ✓ Ready in 841ms
+ ○ Compiling / ...
+ {
+  message: 'TypeError: fetch failed',
+  details: 'TypeError: fetch failed\n' +
+    '\n' +
+    'Caused by: Error: getaddrinfo ENOTFOUND your-supabase-url.supabase.co (ENOTFOUND)\n' +
+    'Error: getaddrinfo ENOTFOUND your-supabase-url.supabase.co\n' +
+    '    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:121:26)\n' +
+    '    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17)',
+  hint: '',
+  code: ''
+}
+ GET / 200 in 6.4s (compile: 6.1s, render: 282ms)
+error: script "dev" was terminated by signal SIGHUP (Terminal hung up)
