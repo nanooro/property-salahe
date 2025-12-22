@@ -138,3 +138,106 @@ $ next dev
 }
  GET / 200 in 6.4s (compile: 6.1s, render: 282ms)
 error: script "dev" was terminated by signal SIGHUP (Terminal hung up)
+ ⚠ Warning: Next.js inferred your workspace root, but it may not be correct.
+ We detected multiple lockfiles and selected the directory of /home/skyboy/dev/bun.lock as the root directory.
+ To silence this warning, set `turbopack.root` in your Next.js config, or consider removing one of the lockfiles if it's not needed.
+   See https://nextjs.org/docs/app/api-reference/config/next-config-js/turbopack#root-directory for more information.
+ Detected additional lockfiles: 
+   * /home/skyboy/dev/salahe/bun.lock
+
+   ▲ Next.js 16.0.10 (Turbopack)
+   - Local:         http://localhost:3000
+   - Network:       http://10.124.32.246:3000
+   - Environments: .env.local
+
+ ✓ Starting...
+ ✓ Ready in 1935ms
+error: Failed to run "next" due to signal SIGHUP
+$ next dev
+ ⚠ Warning: Next.js inferred your workspace root, but it may not be correct.
+ We detected multiple lockfiles and selected the directory of /home/skyboy/dev/bun.lock as the root directory.
+ To silence this warning, set `turbopack.root` in your Next.js config, or consider removing one of the lockfiles if it's not needed.
+   See https://nextjs.org/docs/app/api-reference/config/next-config-js/turbopack#root-directory for more information.
+ Detected additional lockfiles: 
+   * /home/skyboy/dev/salahe/bun.lock
+
+   ▲ Next.js 16.0.10 (Turbopack)
+   - Local:         http://localhost:3000
+   - Network:       http://10.209.212.185:3000
+   - Environments: .env.local
+
+ ✓ Starting...
+ ✓ Ready in 2.2s
+ ○ Compiling / ...
+ GET / 200 in 2.4s (compile: 1307ms, render: 1139ms)
+error: script "dev" was terminated by signal SIGHUP (Terminal hung up)
+$ next dev
+ ⚠ Warning: Next.js inferred your workspace root, but it may not be correct.
+ We detected multiple lockfiles and selected the directory of /home/skyboy/dev/bun.lock as the root directory.
+ To silence this warning, set `turbopack.root` in your Next.js config, or consider removing one of the lockfiles if it's not needed.
+   See https://nextjs.org/docs/app/api-reference/config/next-config-js/turbopack#root-directory for more information.
+ Detected additional lockfiles: 
+   * /home/skyboy/dev/salahe/bun.lock
+
+   ▲ Next.js 16.0.10 (Turbopack)
+   - Local:         http://localhost:3000
+   - Network:       http://10.209.212.94:3000
+   - Environments: .env.local
+
+ ✓ Starting...
+ ✓ Ready in 2.2s
+ ○ Compiling / ...
+ GET / 200 in 11.7s (compile: 10.9s, render: 741ms)
+ ✓ Compiled in 215ms
+ ✓ Compiled in 131ms
+ ✓ Compiled in 120ms
+ ✓ Compiled in 153ms
+ ✓ Compiled in 118ms
+ ✓ Compiled in 168ms
+ ✓ Compiled in 226ms
+ ✓ Compiled in 185ms
+error: script "dev" was terminated by signal SIGHUP (Terminal hung up)
+$ next dev
+ ⚠ Warning: Next.js inferred your workspace root, but it may not be correct.
+ We detected multiple lockfiles and selected the directory of /home/skyboy/dev/bun.lock as the root directory.
+ To silence this warning, set `turbopack.root` in your Next.js config, or consider removing one of the lockfiles if it's not needed.
+   See https://nextjs.org/docs/app/api-reference/config/next-config-js/turbopack#root-directory for more information.
+ Detected additional lockfiles: 
+   * /home/skyboy/dev/salahe/bun.lock
+
+   ▲ Next.js 16.0.10 (Turbopack)
+   - Local:         http://localhost:3000
+   - Network:       http://10.209.212.110:3000
+   - Environments: .env.local
+
+ ✓ Starting...
+ ✓ Ready in 2.1s
+ ○ Compiling / ...
+ GET / 200 in 12.0s (compile: 11.5s, render: 482ms)
+ ✓ Compiled in 282ms
+ ✓ Compiled in 122ms
+ ✓ Compiled in 119ms
+ ✓ Compiled in 514ms
+ GET / 200 in 302ms (compile: 152ms, render: 149ms)
+ ✓ Compiled in 715ms
+ ✓ Compiled in 126ms
+ ✓ Compiled in 399ms
+ GET / 200 in 344ms (compile: 171ms, render: 173ms)
+ ✓ Compiled in 520ms
+ ✓ Compiled in 638ms
+ GET / 200 in 554ms (compile: 281ms, render: 272ms)
+ ✓ Compiled in 513ms
+ ✓ Compiled in 584ms
+ ✓ Compiled in 617ms
+ ✓ Compiled in 511ms
+ ✓ Compiled in 712ms
+ ✓ Compiled in 562ms
+ ✓ Compiled in 477ms
+ ✓ Compiled in 431ms
+ ✓ Compiled in 382ms
+ ✓ Compiled in 362ms
+ ✓ Compiled in 535ms
+ GET / 200 in 563ms (compile: 310ms, render: 253ms)
+ ✓ Compiled in 537ms
+ ✓ Compiled in 690ms
+ ✓ Compiled in 513ms
