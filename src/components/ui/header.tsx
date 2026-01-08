@@ -31,7 +31,7 @@ export function NavbarMain({ className }: { className?: string }) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
-    <Navbar className={className}>
+    <div className={"bg-white/20 fixed top-0 z-50  backdrop-blur-lg w-full outline-gray-500/20 outline-1 " + className}>
       {/* Desktop Navigation */}
       <NavBody>
         <NavbarLogo />
@@ -84,6 +84,6 @@ export function NavbarMain({ className }: { className?: string }) {
           </div>
         </MobileNavMenu>
       </MobileNav>
-    </Navbar>
+    </div>
   );
 }

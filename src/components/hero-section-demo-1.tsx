@@ -95,6 +95,7 @@ export default function HeroSectionOne() {
           </Button>
         </div>
       </motion.div>
+        {  /*   
       <motion.div
         initial={{
           opacity: 0,
@@ -164,8 +165,10 @@ export default function HeroSectionOne() {
               </svg>
             </Button>
           </div>
+
         </div>
       </motion.div>
+                */}
     </div>
   );
 }

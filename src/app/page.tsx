@@ -43,8 +43,8 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="flex flex-col min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <NavbarMain className="fixed top-0" />
+    <div className="flex flex-col min-h-screen pt-32 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
+      <NavbarMain className="fixed top-0 mb-24" />
       <HeroSectionOne />
       {/* 
       <Input type="file" className="hidden" ref={fileInput} onChange={handleFile} />
