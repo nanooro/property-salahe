@@ -1,8 +1,10 @@
 import Link from "next/link";
 
-export default function Footer() {
+export default function Footer({ className }: { className?: string }) {
   return (
-    <footer className="bg-gray-900 text-white w-screen py-6 px-4">
+    <footer
+      className={`bg-gray-900 text-white w-screen py-6 px-4 ${className}`}
+    >
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
         {/* Branding / Logo */}
         <div className="text-lg font-bold">PropertySalahe</div>

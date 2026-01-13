@@ -61,7 +61,7 @@ export default function HeroSectionOne() {
         }}
         className="relative z-10 mt-8 flex flex-row flex-wrap items-center justify-center gap-4"
       >
-        <div className="flex gap-1 w-full mx-4 max-w-4xl  rounded-md bg-transparent justify-center items-start">
+        {/*<div className="flex gap-1 w-full mx-4 max-w-4xl  rounded-md bg-transparent justify-center items-start">
           <div className="">
             <Input
               placeholder="Search property..."
@@ -93,9 +93,9 @@ export default function HeroSectionOne() {
             </svg>
             Search
           </Button>
-        </div>
+        </div>*/}
       </motion.div>
-        {  /*   
+      {/*
       <motion.div
         initial={{
           opacity: 0,

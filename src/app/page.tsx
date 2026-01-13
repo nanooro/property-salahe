@@ -41,18 +41,10 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="flex flex-col min-h-screen pt-32 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
+    <div className="flex flex-col min-h-screen pt-32 sm:pb-32 pb-48 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
       <NavbarMain className="fixed top-0 mb-24" />
       <HeroSectionOne />
-      {/*
-      <Input type="file" className="hidden" ref={fileInput} onChange={handleFile} />
-      */}
-      {/*<div className="w-full flex justify-center gap-2 m-2 items-center">
-        <Button className="w-[75%] max-w-3xl">
-          Explore houses in you area
-          <ArrowRight />
-        </Button>
-      </div>*/}
+
       <Card className="p-0 overflow-hidden w-full max-w-sm rounded-xl border shadow-md group">
         {/* Image Container - No padding here, so it touches the edges */}
         <div className="relative h-56 w-full">
@@ -67,7 +59,9 @@ export default function Home() {
         {/* Text Container - Add padding 'p-5' here instead */}
         <div className="p-5 flex flex-col gap-2">
           <div className="flex items-center justify-between">
-            <h3 className="text-xl font-bold text-gray-900">Haro</h3>
+            <h3 className="text-xl font-bold text-gray-900">
+              Green Valley Estate
+            </h3>
             <span className="rounded-full bg-green-100 px-2.5 py-0.5 text-xs font-medium text-green-800">
               Active
             </span>
@@ -114,7 +108,7 @@ export default function Home() {
           />
         ))}
       </div>*/}
-      <Footer />
+      <Footer className="absolute bottom-0 left-0 right-0" />
     </div>
   );
 }
