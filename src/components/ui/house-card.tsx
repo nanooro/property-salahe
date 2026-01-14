@@ -20,6 +20,8 @@ type Props = {
 };
 import { RainbowButton } from "@/components/ui/rainbow-button";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
+
 export default function HouseCard({
   name,
   location,
@@ -81,13 +83,26 @@ export default function HouseCard({
 
       {/* Content below image */}
       <div className="p-4 space-y-2 flex flex-col h-full">
-        {/* Price */}
+        <h2 className="text-lg font-semibold">
+          Riqueza Siri – Premium Apartments
+        </h2>
+        <p className="text-sm text-gray-500">
+          Ready-to-move 2 & 3 BHK apartments in Hoskote Town spread across 1.5
+          acres with 128 units. BMRDA approved with OC & CC in place. Features
+          25+ world-class amenities including swimming pool, gym, badminton
+          court, and jogging track. High-quality fittings with Jaguar bathroom
+          fixtures. Peaceful environment away from city pollution, ideal for
+          families seeking a serene lifestyle. Bank loans available from SBI,
+          HDFC with 80-85% funding. Prices starting from ₹59 Lakhs.
+        </p>
+
+        {/*  Price
         <h1 className="text-2xl font-bold">₹{formatINR(price)}</h1>
 
-        {/* Location */}
+         Location
         <p className="text-sm text-gray-500">{location}</p>
 
-        {/* Beds, Baths,Kitchens, Sqft */}
+         Beds, Baths,Kitchens, Sqft
         <div className="flex gap-4 text-sm text-gray-600 mt-1">
           <div className="flex items-center gap-1">
             <Bed className="w-4 h-4" /> {beds}
@@ -104,10 +119,12 @@ export default function HouseCard({
           </div>
         </div>
 
-        {/* Agent info and Contact button */}
+         Agent info and Contact button */}
         <div className="flex items-center justify-between mt-3">
           <div className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-full bg-gray-300"></div>{" "}
+            <div className="w-10 h-10 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center text-white font-semibold text-sm shadow-md">
+              {agentName.charAt(0).toUpperCase()}
+            </div>
             {/* Placeholder for agent image */}
             <div className="text-sm">
               <p className="font-semibold">{agentName}</p>
@@ -124,7 +141,10 @@ export default function HouseCard({
         {/* Action buttons: Schedule Tour & View Details */}
         <div className="flex items-center justify-center gap-2 -mb-6  mt-6">
           {youtubeVideoUrl && (
-            <RainbowButton className="flex-1 border border-gray-300 rounded-md py-2 text-sm">
+            <RainbowButton
+              onClick={() => window.open(youtubeVideoUrl, "_blank")}
+              className="flex-1 border border-gray-300 rounded-md py-2 text-sm"
+            >
               Watch tour
             </RainbowButton>
           )}

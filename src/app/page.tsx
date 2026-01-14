@@ -118,8 +118,8 @@ export default function Home() {
           kitchens="0"
           sqft="0000 sq ft"
           agentPhone="+91 00000 00000"
-          agentName="Agent Name"
-          youtubeVideoUrl="https://youtube.com/"
+          agentName="Praveen"
+          youtubeVideoUrl="https://youtu.be/8WzNOWa1fA8?si=BPiFG9N6_byRS4rr"
           newListing={false}
           trending={false}
           imageUrl="/riquiza.png"
