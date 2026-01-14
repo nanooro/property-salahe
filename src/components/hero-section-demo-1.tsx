@@ -6,6 +6,12 @@ import { Button } from "@/components/ui/button";
 import { Form } from "@/components/ui/form";
 import { useState } from "react";
 import { Card } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Phone, Sparkles, TrendingUp } from "lucide-react";
+import { BorderBeam } from "@/components/ui/border-beam";
+import { AnimatedGradientText } from "@/components/ui/animated-gradient-text";
+import { ShimmerButton } from "@/components/ui/shimmer-button";
+
 export default function HeroSectionOne() {
   const [open, setOpen] = useState(false);
   return (
@@ -94,6 +100,54 @@ export default function HeroSectionOne() {
             Search
           </Button>
         </div>*/}
+        <Card className="relative overflow-hidden p-4 sm:p-6 bg-gradient-to-br from-blue-50 via-white to-purple-50 border-2 border-blue-200">
+          <BorderBeam size={250} duration={12} delay={9} />
+
+          <div className="flex flex-col gap-4">
+            {/* Top - Promo text */}
+            <div className="flex flex-col gap-2">
+              <AnimatedGradientText>
+                <span className="text-base sm:text-lg font-bold">
+                  🏠 Housing Loan Promotions
+                </span>
+              </AnimatedGradientText>
+              <div className="flex flex-wrap gap-2">
+                <Badge variant="secondary" className="text-xs">
+                  <TrendingUp className="w-3 h-3 mr-1" />
+                  Limited Offer
+                </Badge>
+                <Badge
+                  variant="outline"
+                  className="text-xs bg-green-50 text-green-700 border-green-300"
+                >
+                  80-85% Funding
+                </Badge>
+              </div>
+            </div>
+
+            {/* Bottom - Phone + Button */}
+            <div className="flex items-center justify-between gap-3">
+              <div className="flex flex-col">
+                <span className="text-xs text-gray-600 font-medium">
+                  Call us now
+                </span>
+                <a
+                  href="tel:+918073269676"
+                  className="text-lg sm:text-xl font-bold text-gray-900 hover:text-blue-600 transition-colors flex items-center gap-2"
+                >
+                  <Phone className="w-4 h-4 sm:w-5 sm:h-5" />
+                  +91 80732-69676
+                </a>
+              </div>
+
+              <ShimmerButton className="shadow-lg shrink-0">
+                <span className="whitespace-nowrap text-center text-sm font-medium leading-none tracking-tight text-white px-2">
+                  Apply Now
+                </span>
+              </ShimmerButton>
+            </div>
+          </div>
+        </Card>
       </motion.div>
       {/*
       <motion.div
