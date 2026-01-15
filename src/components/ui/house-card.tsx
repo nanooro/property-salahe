@@ -3,42 +3,57 @@ import { Card } from "@/components/ui/card";
 import Image from "next/image";
 import { Bed, Bath, Ruler, Phone, TrendingUp } from "lucide-react";
 import { CookingPot } from "lucide-react";
+import { useRouter } from "next/navigation";
+
 type Props = {
-  name: string;
-  location: string;
-  financeType: string;
-  price: string | number;
-  beds: number;
-  baths: number;
-  sqft: number;
-  agentName: string;
-  agentPhone: string;
-  kitchens: number;
-  newListing?: boolean;
-  youtubeVideoUrl?: string;
+  // Required props
   imageUrl: string;
-  trending?: Boolean;
+  title: string;
+
+  // Optional props
+  useEmbedPlayer?: boolean;
+  youtubeVideoUrl?: string;
+  id?: string | number;
+  subtitle?: string;
+  name?: string;
+  location?: string;
+  financeType?: string;
+  price?: string | number;
+  beds?: number;
+  baths?: number;
+  sqft?: number;
+  agentName?: string;
+  agentPhone?: string;
+  kitchens?: number;
+  newListing?: boolean;
+  trending?: boolean;
 };
+
 import { RainbowButton } from "@/components/ui/rainbow-button";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
 export default function HouseCard({
-  name,
+  youtubeVideoUrl,
+  imageUrl,
+  title,
+  subtitle,
   location,
   financeType,
   price,
   beds,
   baths,
   sqft,
-  agentName,
-  agentPhone,
-  youtubeVideoUrl,
   newListing,
   kitchens,
-  imageUrl,
   trending,
+  id,
+  useEmbedPlayer,
+  agentName,
+  agentPhone,
 }: Props) {
+  const router = useRouter();
+
   // Function to format price into Indian numbering system (lakhs, crores)
   const formatINR = (amount: string | number) => {
     const num =
@@ -50,121 +65,153 @@ export default function HouseCard({
     return new Intl.NumberFormat("en-IN").format(num);
   };
 
+  // Extract YouTube video ID from URL
+  const getYouTubeEmbedUrl = (url: string) => {
+    const videoIdMatch = url.match(
+      /(?:youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^"&?\/\s]{11})/,
+    );
+    const videoId = videoIdMatch ? videoIdMatch[1] : url;
+    return `https://www.youtube.com/embed/${videoId}`;
+  };
+
+  // Handle phone call
+  const handleCall = () => {
+    if (agentPhone) {
+      window.location.href = `tel:${agentPhone}`;
+    }
+  };
+
   return (
-    // Outer Card container
-    <Card className="max-w-[350px] overflow-hidden rounded-xl shadow-md bg-white">
-      {/* Image section */}
+    <Card className="max-w-[350px] min-w-[300px] overflow-hidden rounded-xl shadow-md bg-white">
+      {/* Video/Image section */}
       <div className="relative w-full aspect-video">
-        <iframe
-          className="w-full h-full -mt-6"
-          src="https://www.youtube.com/embed/8WzNOWa1fA8?si=owcPEYePTrAmnDlo"
-          title="YouTube video player"
-          frameBorder={0}
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          referrerPolicy="strict-origin-when-cross-origin"
-          allowFullScreen
-        />
+        {useEmbedPlayer && youtubeVideoUrl ? (
+          <iframe
+            className="w-full h-full -mt-6"
+            src={getYouTubeEmbedUrl(youtubeVideoUrl)}
+            title="YouTube video player"
+            frameBorder={0}
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerPolicy="strict-origin-when-cross-origin"
+            allowFullScreen
+          />
+        ) : (
+          <Image
+            className="w-full h-full object-cover -mt-6"
+            src={imageUrl}
+            alt={title}
+            fill
+          />
+        )}
 
         {/* Tags overlay */}
-        <div className="absolute top-3 left-3 flex gap-2 flex-wrap z-10">
-          {trending === true && (
-            <span
-              className="bg-red-500 text-white text-xs
-          px-2 py-1 rounded-full flex justify-center items-center gap-1"
-            >
-              <TrendingUp className="w-3 h-3" /> Trending{" "}
-            </span>
-          )}{" "}
-          {newListing === true && (
-            <span
-              className="bg-black text-white text-xs px-2 py-1
-          rounded-full flex justify-center items-center gap-1"
-            >
-              {" "}
-              New Listing
-            </span>
-          )}{" "}
-          {/*<span
-            className="bg-white text-black text-xs px-2 py-1 mt-8
-          rounded-full flex justify-center items-center gap-1"
-          >
-            {" "}
-            {financeType}
-          </span>*/}
-        </div>
+        {(trending || newListing) && (
+          <div className="absolute top-3 left-3 flex gap-2 flex-wrap z-10">
+            {trending && (
+              <span className="bg-red-500 text-white text-xs px-2 py-1 rounded-full flex justify-center items-center gap-1">
+                <TrendingUp className="w-3 h-3" /> Trending
+              </span>
+            )}
+            {newListing && (
+              <span className="bg-black text-white text-xs px-2 py-1 rounded-full flex justify-center items-center gap-1">
+                New Listing
+              </span>
+            )}
+          </div>
+        )}
       </div>
 
-      {/* Content below image */}
+      {/* Content below video */}
       <div className="p-4 space-y-2 flex flex-col h-full">
-        <h2 className="text-lg font-semibold">
-          Riqueza Siri – Premium Apartments
-        </h2>
-        <p className="text-sm text-gray-500">
-          Ready-to-move 2 & 3 BHK apartments in Hoskote Town spread across 1.5
-          acres with 128 units. BMRDA approved with OC & CC in place. Features
-          25+ world-class amenities including swimming pool, gym, badminton
-          court, and jogging track. High-quality fittings with Jaguar bathroom
-          fixtures. Peaceful environment away from city pollution, ideal for
-          families seeking a serene lifestyle. Bank loans available from SBI,
-          HDFC with 80-85% funding. Prices starting from ₹59 Lakhs.
-        </p>
+        <h2 className="text-lg font-semibold">{title}</h2>
 
-        {/*  Price
-        <h1 className="text-2xl font-bold">₹{formatINR(price)}</h1>
+        {subtitle && <p className="text-sm text-gray-500">{subtitle}</p>}
 
-         Location
-        <p className="text-sm text-gray-500">{location}</p>
+        {/* Price */}
+        {price && <h1 className="text-2xl font-bold">₹{formatINR(price)}</h1>}
 
-         Beds, Baths,Kitchens, Sqft
-        <div className="flex gap-4 text-sm text-gray-600 mt-1">
-          <div className="flex items-center gap-1">
-            <Bed className="w-4 h-4" /> {beds}
-          </div>
-          <div className="flex items-center gap-1">
-            <Bath className="w-4 h-4" /> {baths}
-          </div>
-          <div className="flex items-center gap-1">
-            <CookingPot className="w-4 h-4" /> {kitchens}
-          </div>
-          <div className="flex items-center gap-1">
-            {" "}
-            <Ruler className="w-4 h-4" /> {sqft?.toLocaleString() ?? "0"} sqft
-          </div>
-        </div>
+        {/* Location */}
+        {location && <p className="text-sm text-gray-500">{location}</p>}
 
-         Agent info and Contact button */}
-        <div className="flex items-center justify-between mt-3">
-          <div className="flex items-center gap-2">
-            <div className="w-10 h-10 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center text-white font-semibold text-sm shadow-md">
-              {agentName.charAt(0).toUpperCase()}
-            </div>
-            {/* Placeholder for agent image */}
-            <div className="text-sm">
-              <p className="font-semibold">{agentName}</p>
-              <div className="flex items-center gap-1 text-gray-500 text-xs">
-                <Phone className="w-3 h-3" /> {agentPhone}
+        {/* Beds, Baths, Kitchens, Sqft */}
+        {(beds || baths || kitchens || sqft) && (
+          <div className="flex gap-4 text-sm text-gray-600 mt-1">
+            {beds !== undefined && (
+              <div className="flex items-center gap-1">
+                <Bed className="w-4 h-4" /> {beds}
               </div>
-            </div>
+            )}
+            {baths !== undefined && (
+              <div className="flex items-center gap-1">
+                <Bath className="w-4 h-4" /> {baths}
+              </div>
+            )}
+            {kitchens !== undefined && (
+              <div className="flex items-center gap-1">
+                <CookingPot className="w-4 h-4" /> {kitchens}
+              </div>
+            )}
+            {sqft !== undefined && (
+              <div className="flex items-center gap-1">
+                <Ruler className="w-4 h-4" /> {sqft.toLocaleString()} sqft
+              </div>
+            )}
           </div>
-          <button className="bg-black text-white px-3 py-1 rounded-md text-sm">
-            Contact
-          </button>
-        </div>
+        )}
 
-        {/* Action buttons: Schedule Tour & View Details */}
-        <div className="flex items-center justify-center gap-2 -mb-6  mt-6">
-          {youtubeVideoUrl && (
-            <RainbowButton
-              onClick={() => window.open(youtubeVideoUrl, "_blank")}
-              className="flex-1 border border-gray-300 rounded-md py-2 text-sm"
-            >
-              Watch tour
-            </RainbowButton>
-          )}
-          <Button variant="outline" className="flex-1  rounded-md py-2 text-sm">
-            View Details
-          </Button>
-        </div>
+        {/* Agent info and Contact button */}
+        {(agentName || agentPhone) && (
+          <div className="flex items-center justify-between mt-3">
+            {agentName && (
+              <div className="flex items-center gap-2">
+                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center text-white font-semibold text-sm shadow-md">
+                  {agentName.charAt(0).toUpperCase()}
+                </div>
+                <div className="text-sm">
+                  <p className="font-semibold">{agentName}</p>
+                  {agentPhone && (
+                    <div className="flex items-center gap-1 text-gray-500 text-xs">
+                      <Phone className="w-3 h-3" /> {agentPhone}
+                    </div>
+                  )}
+                </div>
+              </div>
+            )}
+            {agentPhone && (
+              <button
+                onClick={handleCall}
+                className="bg-black text-white px-3 py-1 rounded-md text-sm"
+              >
+                Contact
+              </button>
+            )}
+          </div>
+        )}
+
+        {/* Action buttons: Watch Tour & View Details */}
+        {(youtubeVideoUrl || id) && (
+          <div className="flex items-center justify-center gap-2 -mb-6 mt-6">
+            {youtubeVideoUrl && (
+              <RainbowButton
+                onClick={() => window.open(youtubeVideoUrl, "_blank")}
+                className="flex-1 border border-gray-300 rounded-md py-2 text-sm"
+              >
+                Watch tour
+              </RainbowButton>
+            )}
+            {id && (
+              <Button
+                variant="outline"
+                className="flex-1 rounded-md py-2 text-sm"
+                onClick={() => {
+                  router.push(`/houses/${id}`);
+                }}
+              >
+                View Details
+              </Button>
+            )}
+          </div>
+        )}
       </div>
     </Card>
   );
