@@ -177,6 +177,7 @@ export default function HouseCard({
                 </div>
               </div>
             )}
+
             {agentPhone && (
               <button
                 onClick={handleCall}
@@ -185,30 +186,29 @@ export default function HouseCard({
                 Contact
               </button>
             )}
-          </div>
+          </div> // <-- closes the flex container
         )}
-
         {/* Action buttons: Watch Tour & View Details */}
         {(youtubeVideoUrl || id) && (
-          <div className="flex items-center justify-center gap-2 -mb-6 mt-6">
-            {youtubeVideoUrl && (
-              <RainbowButton
-                onClick={() => window.open(youtubeVideoUrl, "_blank")}
-                className="flex-1 border border-gray-300 rounded-md py-2 text-sm"
-              >
-                Watch tour
-              </RainbowButton>
-            )}
+          <div className="flex flex-col w-full items-center justify-center gap-2 -mb-6 mt-6">
             {id && (
               <Button
                 variant="outline"
-                className="flex-1 rounded-md py-2 text-sm"
+                className="flex-1 w-full rounded-md py-2 text-sm"
                 onClick={() => {
                   router.push(`/houses/${id}`);
                 }}
               >
                 View Details
               </Button>
+            )}
+            {youtubeVideoUrl && (
+              <RainbowButton
+                onClick={() => window.open(youtubeVideoUrl, "_blank")}
+                className="w-full flex-1 border border-gray-300 rounded-md py-2 text-sm"
+              >
+                Watch tour
+              </RainbowButton>
             )}
           </div>
         )}
