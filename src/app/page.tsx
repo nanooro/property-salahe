@@ -38,10 +38,9 @@ export default function Home() {
   useEffect(() => {
     const fetchProperties = async () => {
       try {
-        const { data, error } = await supabase
-          .from("properties")
-          .select("*")
-          .order("created_at", { ascending: false });
+        const { data, error } = await supabase.from("properties").select("*", {
+          order: "created_at.desc",
+        });
 
         if (error) {
           console.error("Supabase error:", error);
